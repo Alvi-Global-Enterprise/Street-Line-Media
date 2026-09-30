@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #ffffff;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-orange {
+    @apply bg-brand-orange text-white font-bold text-[18px] leading-5 px-8 py-3 rounded-full inline-flex items-center gap-3 transition-all duration-200 ease-in-out hover:bg-orange-600 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2;
+  }
+
+  .btn-outline-white {
+    @apply border border-white text-white font-bold text-[18px] leading-5 px-8 py-3 rounded-full inline-flex items-center gap-3 transition-all duration-200 ease-in-out hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-1;
+  }
+
+  .section-label {
+    @apply text-brand-orange-light font-bold text-[23px] leading-[25px] tracking-[0.32em] uppercase;
+  }
+
+  .section-title {
+    @apply font-extrabold text-[54px] leading-[109%] tracking-[0.01em] capitalize;
+  }
+
+  .section-title-lg {
+    @apply font-extrabold text-[65px] leading-[109%] tracking-[0.01em] capitalize;
+  }
+
+  .card-billboard {
+    @apply rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  .arrow-btn {
+    @apply inline-flex items-center gap-2 text-brand-orange font-bold text-[18px] uppercase tracking-wider transition-all duration-200 hover:gap-3;
+  }
+}
+
+@layer utilities {
+  .transition-250 {
+    transition: all 250ms ease-in-out;
+  }
+
+  .text-gradient-years {
+    background: linear-gradient(180deg, #0A0400 17.39%, #FF6801 92.75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF6801;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e05a00;
+}
+
+/* Billboard glowing light animations for CTABanner - Pure circular blurry glow */
+@keyframes bulbGlowPulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes billboardSoftGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.04);
+  }
+}
+
+.animate-bulb-glow {
+  animation: bulbGlowPulse 3s ease-in-out infinite;
+}
+
+.animate-board-glow {
+  animation: billboardSoftGlow 4.5s ease-in-out infinite;
+}
