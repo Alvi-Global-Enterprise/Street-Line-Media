@@ -62,10 +62,10 @@ function ServiceCard({ service }) {
   return (
     <article
       id={service.id}
-      className="bg-white shadow-[0_0_25px_rgba(0,0,0,0.2)] rounded-[20px] p-8 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_40px_rgba(0,0,0,0.15)] group"
+      className="bg-white shadow-[0_0_25px_rgba(0,0,0,0.1)] rounded-[20px] p-6 sm:p-8 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_40px_rgba(0,0,0,0.15)] group"
     >
       {/* Icon */}
-      <div className="w-8 h-8 flex items-center justify-center">
+      <div className="w-9 h-9 flex items-center justify-center">
         <img
           src={service.icon}
           alt={`${service.title} icon`}
@@ -75,17 +75,17 @@ function ServiceCard({ service }) {
       </div>
 
       {/* Title */}
-      <h3 className="font-bold  md:text-[16px] lg:text-[20px] xl:text-[24px] text-black leading-[150%]">{service.title}</h3>
+      <h3 className="font-bold text-[18px] sm:text-[20px] xl:text-[24px] text-black leading-[140%]">{service.title}</h3>
 
       {/* Description */}
-      <p className="text-black font-normal text-[24px] leading-[150%] flex-1">{service.description}</p>
+      <p className="text-black/75 font-normal text-[15px] sm:text-[16px] xl:text-[17px] leading-[150%] flex-1">{service.description}</p>
 
       {/* Divider */}
-      <div className="w-full h-[2px] bg-[#D9D9D9]" />
+      <div className="w-full h-[1.5px] bg-[#D9D9D9]" />
 
       {/* Learn More */}
       <button
-        className="inline-flex items-center gap-2 text-brand-orange font-bold text-[18px] uppercase tracking-wider transition-all duration-250 hover:gap-3 group-hover:translate-x-1"
+        className="inline-flex items-center gap-2 text-brand-orange font-bold text-[16px] sm:text-[18px] uppercase tracking-wider transition-all duration-250 hover:gap-3 group-hover:translate-x-1"
         aria-label={`Learn more about ${service.title}`}
       >
         Learn More
@@ -96,41 +96,37 @@ function ServiceCard({ service }) {
 }
 
 export default function Services() {
-  const scrollToContact = () => {
-    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section id="services" className="bg-white py-16 lg:py-24">
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-[100px]">
+    <section id="services" className="bg-white py-14 lg:py-20 xl:py-24">
+      <div className="max-w-[1920px] mx-auto px-6 lg:px-12 xl:px-[100px]">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-6 mb-12">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-10 lg:mb-12">
           <div className="max-w-[791px]">
-            <p className="section-label text-brand-orange-light mb-4">Our Services</p>
+            <p className="section-label text-brand-orange-light mb-3">Our Services</p>
             <h2
-              className="font-extrabold text-[20px] md:text-[32px] lg:text-[38px] xl:text-[54px] text-black capitalize"
-              style={{ lineHeight: '127%', letterSpacing: '0.01em' }}
+              className="font-extrabold text-[22px] md:text-[32px] lg:text-[40px] xl:text-[54px] text-black capitalize"
+              style={{ lineHeight: '122%', letterSpacing: '0.01em' }}
             >
-              A complete roadside <span className='text-[#FF6801]' >advertising service.</span>
+              A complete roadside <span className='text-[#FF6801]'>advertising service.</span>
             </h2>
           </div>
           <p
-            className="text-black max-w-[667px] text-right self-end"
-            style={{ fontSize: 'clamp(16px, 1.6vw, 25px)', lineHeight: '141%', letterSpacing: '0.01em' }}
+            className="text-black max-w-[667px] text-left lg:text-right self-start lg:self-end"
+            style={{ fontSize: 'clamp(15px, 1.4vw, 25px)', lineHeight: '141%', letterSpacing: '0.01em' }}
           >
             We make billboard advertising simple, handling every step from planning to installation, so you can focus on your business.
           </p>
         </div>
 
         {/* Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-12 sm:mb-16">
           {services.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
         </div>
 
         {/* How it works - Black section (Figma Group 224 / Rectangle 66) */}
-        <div className="bg-black rounded-[20px] py-12 lg:py-16 px-6 lg:px-12 xl:px-16 mt-8">
+        <div className="bg-black rounded-[20px] py-10 lg:py-14 xl:py-16 px-6 lg:px-10 xl:px-16 mt-6 sm:mt-8">
 
           {/* Header row */}
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-12">
@@ -182,8 +178,8 @@ export default function Services() {
             </div>
           </div>
 
-          {/* Steps row — Figma Group 212: 4 cards (380x133px each, bg #212121, radius 20px) connected by 67px dashed line with arrow tip */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-[67px] relative items-stretch">
+          {/* Steps row — Figma Group 212: 4 cards (380x133px each, bg #212121, radius 20px) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8 2xl:gap-[67px] relative items-stretch">
             {steps.map((step, i) => (
               <div key={step.id} className="relative flex items-stretch">
                 {/* Step card — Figma: 380x133px, bg #212121, border-radius 20px */}

@@ -9,86 +9,76 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden"
-      style={{ width: '100%', minHeight: '872px', background: '#000000' }}
+      className="relative overflow-hidden w-full bg-black min-h-[640px] md:min-h-[700px] lg:min-h-[760px] xl:min-h-[820px] 2xl:min-h-[872px] flex flex-col justify-center"
     >
-      {/* Background Image — full bleed */}
+      {/* Background Image — full bleed with right-anchored positioning so the billboard is never cut off */}
       <div className="absolute inset-0">
         <img
           src="/assets/Group 120.png"
           alt="Streetline roadside billboard at night"
-          className="absolute w-full h-full object-cover object-center"
+          className="absolute w-full h-full object-cover object-[78%_center] lg:object-[82%_center] xl:object-[85%_center] select-none pointer-events-none"
           style={{ top: 0, left: 0 }}
         />
-        {/* Gradient overlay — Figma: linear-gradient(270deg, rgba(0,0,0,0) 9.13%, rgba(0,0,0,0.7) 47.49%) with slight rotation */}
+        {/* Gradient overlay for high contrast text readability on left while keeping billboard vivid */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              'linear-gradient(270deg, rgba(0, 0, 0, 0) 9.13%, rgba(0, 0, 0, 0.7) 47.49%)',
+              'linear-gradient(90deg, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.74) 42%, rgba(0, 0, 0, 0.28) 72%, rgba(0, 0, 0, 0.12) 100%)',
           }}
         />
       </div>
 
       {/* Hero Content */}
       <div
-        className="relative z-10 flex flex-col justify-center"
+        className="relative z-10 flex flex-col justify-center w-full"
         style={{
-          minHeight: '872px',
           maxWidth: '1920px',
           margin: '0 auto',
-          /* pt accounts for 104px navbar + Figma top: 260px */
-          paddingTop: '260px',
-          paddingBottom: '60px',
-          paddingLeft: 'clamp(24px, 5.2vw, 100px)',
-          paddingRight: 'clamp(24px, 5.2vw, 100px)',
+          paddingTop: 'clamp(120px, 17vh, 230px)',
+          paddingBottom: 'clamp(44px, 6vh, 64px)',
+          paddingLeft: 'clamp(20px, 5.2vw, 100px)',
+          paddingRight: 'clamp(20px, 5.2vw, 100px)',
         }}
       >
-        <div style={{ maxWidth: '814px' }}>
+        <div className="w-full max-w-[814px]">
 
-          {/* Eyebrow label — Figma: 23px, weight 700, #FFAD74, letter-spacing 0.32em, UPPERCASE */}
+          {/* Eyebrow label — Outdoor Advertising That Works */}
           <p
-            className="animate-fade-in-up text-brand-orange-light"
+            className="animate-fade-in-up text-brand-orange-light font-bold uppercase tracking-[0.32em]"
             style={{
-              fontWeight: 700,
-              fontSize: 'clamp(14px, 1.6vw, 23px)',
-              lineHeight: '25px',
-              letterSpacing: '0.32em',
-              textTransform: 'uppercase',
+              fontSize: 'clamp(13px, 1.4vw, 23px)',
+              lineHeight: '130%',
               color: '#FFAD74',
-              marginBottom: '14px',
+              marginBottom: 'clamp(10px, 1.6vh, 16px)',
             }}
           >
             Outdoor Advertising That Works
           </p>
 
-          {/* H1 — Figma: 65px, weight 800, #FFFFFF, line-height 109%, letter-spacing 0.01em, capitalize */}
+          {/* H1 */}
           <h1
-            className="animate-fade-in-up  text-[32px] lg:text-[48px] xl:text-[65px] text-white font-extrabold"
+            className="animate-fade-in-up text-[30px] sm:text-[38px] md:text-[46px] lg:text-[54px] xl:text-[65px] text-white font-extrabold capitalize"
             style={{
               fontWeight: 900,
               lineHeight: '109%',
               letterSpacing: '0.01em',
-              textTransform: 'capitalize',
-              color: '#FFFFFF',
-              maxWidth: '700px',
-              marginBottom: '26px',
+              maxWidth: '720px',
+              marginBottom: 'clamp(16px, 2.5vh, 26px)',
               animationDelay: '0.1s',
             }}
           >
-            Roadside advertising that <span className="text-brand-orange" > gets your business seen.</span>
+            Roadside advertising that <span className="text-brand-orange">gets your business seen.</span>
           </h1>
 
-          {/* Sub-copy — Figma: 25px, weight 400, #FFFFFF, line-height 141%, letter-spacing 0.01em */}
+          {/* Sub-copy */}
           <p
-            className="animate-fade-in-up text-[15px] lg:text-[18px] xl:text-[25px]  text-white"
+            className="animate-fade-in-up text-[15px] sm:text-[17px] lg:text-[19px] xl:text-[23px] 2xl:text-[25px] text-white font-normal"
             style={{
-              fontWeight: 400,
               lineHeight: '141%',
               letterSpacing: '0.01em',
-              color: '#FFFFFF',
               maxWidth: '778px',
-              marginBottom: '57px',
+              marginBottom: 'clamp(24px, 4vh, 48px)',
               animationDelay: '0.2s',
             }}
           >
@@ -97,71 +87,57 @@ export default function Hero() {
             advertising simple and effective.
           </p>
 
-          {/* CTA Buttons — Figma: 48px height, 24px border-radius */}
+          {/* CTA Buttons */}
           <div
-            className="animate-fade-in-up flex flex-wrap"
-            style={{ gap: '22px', animationDelay: '0.3s' }}
+            className="animate-fade-in-up flex flex-wrap items-center gap-4 sm:gap-5"
+            style={{ animationDelay: '0.3s' }}
           >
-            {/* Primary CTA — bg #FF6801, text BLACK, border-radius 24px, 322.73×48px */}
+            {/* Primary CTA */}
             <button
               id="hero-enquire-btn"
               onClick={scrollToContact}
-              className="inline-flex items-center  transition-all duration-200 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center justify-between transition-all duration-200 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               style={{
                 background: '#FF6801',
                 borderRadius: '24.09px',
                 height: '48px',
-                padding: '0 14px 0 22px',
+                padding: '0 18px 0 22px',
                 gap: '12px',
                 border: 'none',
-                cursor: 'pointer',
               }}
             >
               <span
-                className="text-[13px]  xl:text-[18px]"
-                style={{
-                  fontWeight: 700,
-                  lineHeight: '20px',
-                  color: '#000000',
-                  whiteSpace: 'nowrap',
-                }}
+                className="text-[14px] sm:text-[16px] xl:text-[18px] font-bold text-black whitespace-nowrap"
+                style={{ lineHeight: '20px' }}
               >
                 Enquire About Advertising
               </span>
-              {/* Arrow — Figma: 2.5px stroke, black */}
               <svg width="15" height="10" viewBox="0 0 15 10" fill="none" style={{ flexShrink: 0 }}>
                 <line x1="0" y1="5" x2="14" y2="5" stroke="#000000" strokeWidth="2.5" strokeLinecap="round" />
                 <polyline points="9,0.5 14,5 9,9.5" stroke="#000000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
               </svg>
             </button>
 
-            {/* Secondary CTA — border white, text white, border-radius 24px, 311×48px */}
+            {/* Secondary CTA */}
             <button
               id="hero-locations-btn"
               onClick={scrollToLocations}
-              className="inline-flex items-center  transition-all duration-200 hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98]"
+              className="inline-flex items-center justify-between transition-all duration-200 hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               style={{
                 background: 'transparent',
                 border: '1px solid #FFFFFF',
                 borderRadius: '24.09px',
                 height: '48px',
-                padding: '0 14px 0 22px',
+                padding: '0 18px 0 22px',
                 gap: '12px',
-                cursor: 'pointer',
               }}
             >
               <span
-                className="text-[13px]  xl:text-[18px]"
-                style={{
-                  fontWeight: 700,
-                  lineHeight: '20px',
-                  color: '#FFFFFF',
-                  whiteSpace: 'nowrap',
-                }}
+                className="text-[14px] sm:text-[16px] xl:text-[18px] font-bold text-white whitespace-nowrap"
+                style={{ lineHeight: '20px' }}
               >
                 View Billboard Locations
               </span>
-              {/* Arrow — Figma: 2.5px stroke, white */}
               <svg width="15" height="10" viewBox="0 0 15 10" fill="none" style={{ flexShrink: 0 }}>
                 <line x1="0" y1="5" x2="14" y2="5" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" />
                 <polyline points="9,0.5 14,5 9,9.5" stroke="#FFFFFF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />

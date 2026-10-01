@@ -6,14 +6,14 @@ export default function CTABanner() {
   return (
     <section
       id="cta-banner"
-      className="relative w-full min-h-[464px] overflow-hidden flex items-center bg-[#0d0705]"
+      className="relative w-full min-h-[420px] lg:min-h-[464px] overflow-hidden flex items-center bg-[#0d0705]"
     >
       {/* Background Panorama Image (Figma Group 226 / image 15) */}
       <img
         src="/assets/image 15.png"
         alt="Roadside billboard at dusk cityscape"
         className="absolute inset-0 w-full h-full object-cover object-right pointer-events-none select-none"
-        style={{ minHeight: '464px' }}
+        style={{ minHeight: '420px' }}
       />
 
       {/* Dark gradient on the left for crisp text contrast while keeping right side billboard vivid */}
@@ -86,19 +86,19 @@ export default function CTABanner() {
       </div>
 
       {/* Foreground Content Container (Figma Group 216: 1091px x 301px, left 100px) */}
-      <div className="relative z-10 max-w-[1920px] mx-auto px-6 lg:px-[100px] py-16 lg:py-20 w-full">
+      <div className="relative z-10 max-w-[1920px] mx-auto px-6 lg:px-12 xl:px-[100px] py-14 lg:py-20 w-full">
         <div className="max-w-[1091px]">
           {/* Eyebrow — Figma: GET YOUR BUSINESS SEEN, 23px, weight 700, #FFAD74, letter-spacing 0.32em */}
           <p
             style={{
               fontFamily: "'LINE Seed JP', sans-serif",
               fontWeight: 700,
-              fontSize: 'clamp(15px, 1.2vw, 23px)',
+              fontSize: 'clamp(14px, 1.2vw, 23px)',
               lineHeight: '25px',
               letterSpacing: '0.32em',
               textTransform: 'uppercase',
               color: '#FFAD74',
-              marginBottom: '12px',
+              marginBottom: '10px',
             }}
           >
             Get Your Business Seen
@@ -106,12 +106,12 @@ export default function CTABanner() {
 
           {/* Headline — Figma: 54px, weight 800, line-height 109%, letter-spacing 0.01em */}
           <h2
-            className="font-extrabold text-white capitalize text-[28px] sm:text-[38px] lg:text-[46px] xl:text-[54px]"
+            className="font-extrabold text-white capitalize text-[26px] sm:text-[36px] lg:text-[46px] xl:text-[54px]"
             style={{
               fontFamily: "'LINE Seed JP', sans-serif",
-              lineHeight: '109%',
+              lineHeight: '112%',
               letterSpacing: '0.01em',
-              marginBottom: '16px',
+              marginBottom: '14px',
               maxWidth: '1091px',
             }}
           >
@@ -121,13 +121,13 @@ export default function CTABanner() {
 
           {/* Subtext — Figma: 24px, weight 400, line-height 141% */}
           <p
-            className="text-white font-normal text-[16px] sm:text-[20px] xl:text-[24px]"
+            className="text-white font-normal text-[15px] sm:text-[18px] xl:text-[22px]"
             style={{
               fontFamily: "'LINE Seed JP', sans-serif",
               lineHeight: '141%',
               letterSpacing: '0.01em',
               maxWidth: '586px',
-              marginBottom: '36px',
+              marginBottom: '32px',
             }}
           >
             Reach more people with high-impact roadside advertising.
@@ -135,13 +135,12 @@ export default function CTABanner() {
 
           {/* Buttons Row */}
           <div className="flex flex-wrap items-center gap-4">
-            {/* Button 1: Request a Quote (Figma Group 117: 237px x 48px, #FF6801, text #000000, 2.5px arrow) */}
+            {/* Button 1: Request a Quote */}
             <button
               id="cta-quote-btn"
               onClick={scrollToContact}
-              className="inline-flex items-center justify-center gap-3 transition-all duration-300 hover:bg-[#ff7a20] hover:scale-[1.02] active:scale-[0.98] group"
+              className="inline-flex items-center justify-center gap-3 transition-all duration-300 hover:bg-[#ff7a20] hover:scale-[1.02] active:scale-[0.98] group w-full sm:w-[237px]"
               style={{
-                width: '237px',
                 height: '48px',
                 background: '#FF6801',
                 borderRadius: '24.0949px',
@@ -159,13 +158,12 @@ export default function CTABanner() {
               </svg>
             </button>
 
-            {/* Button 2: Request a Callback (Figma Group 192: 256px x 48px, border 1px solid #FFFFFF, text #FFFFFF, 2.5px arrow) */}
+            {/* Button 2: Request a Callback */}
             <button
               id="cta-callback-btn"
               onClick={scrollToContact}
-              className="inline-flex items-center justify-center gap-3 transition-all duration-300 hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98] group"
+              className="inline-flex items-center justify-center gap-3 transition-all duration-300 hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98] group w-full sm:w-[256px]"
               style={{
-                width: '256px',
                 height: '48px',
                 border: '1px solid #FFFFFF',
                 borderRadius: '24.0949px',

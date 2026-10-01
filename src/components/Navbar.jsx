@@ -76,27 +76,25 @@ export default function Navbar() {
 
       {/* Desktop Layout */}
       <div
-        className="hidden lg:flex items-center relative"
-        style={{ height: '104px', maxWidth: '1932px', margin: '0 auto', zIndex: 1 }}
+        className="hidden lg:flex items-center justify-between relative w-full h-full px-6 lg:px-10 xl:px-[100px]"
+        style={{ maxWidth: '1932px', margin: '0 auto', zIndex: 1 }}
       >
-        {/* Logo — positioned exactly as Figma: left: 100px */}
+        {/* Logo */}
         <a
           href="#home"
           onClick={(e) => { e.preventDefault(); handleNavClick('Home', '#home'); }}
-          className="flex-shrink-0 absolute"
-          style={{ left: '100px', top: '50%', transform: 'translateY(-50%)' }}
+          className="flex-shrink-0 flex items-center"
         >
           <img
             src="/assets/logo.png"
             alt="Streetline Media Logo"
-            style={{ height: '56.4px', width: 'auto', objectFit: 'contain' }}
+            className="h-[46px] xl:h-[56px] w-auto object-contain"
           />
         </a>
 
-        {/* Nav Links — centered horizontally */}
+        {/* Nav Links */}
         <nav
-          className="absolute left-1/2 flex items-center"
-          style={{ transform: 'translateX(calc(-50% - 13px))', gap: '40px', top: '50%', marginTop: '-10px' }}
+          className="flex items-center gap-6 xl:gap-10"
         >
           {navLinks.map((link) => {
             const isActive = activeLink === link.label;
@@ -105,19 +103,19 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => { e.preventDefault(); handleNavClick(link.label, link.href); }}
-                className="relative flex flex-col items-start transition-all duration-200"
+                className="relative flex flex-col items-start transition-all duration-200 py-2"
                 style={{
                   fontWeight: 700,
-                  fontSize: '18px',
+                  fontSize: 'clamp(15px, 1.15vw, 18px)',
                   lineHeight: '20px',
-                  color: isActive ? '#FF6801' : 'rgba(255, 255, 255, 0.31)',
+                  color: isActive ? '#FF6801' : 'rgba(255, 255, 255, 0.45)',
                   whiteSpace: 'nowrap',
                 }}
                 onMouseEnter={(e) => {
-                  if (!isActive) e.currentTarget.style.color = 'rgba(255,255,255,0.7)';
+                  if (!isActive) e.currentTarget.style.color = '#FFFFFF';
                 }}
                 onMouseLeave={(e) => {
-                  if (!isActive) e.currentTarget.style.color = 'rgba(255, 255, 255, 0.31)';
+                  if (!isActive) e.currentTarget.style.color = 'rgba(255, 255, 255, 0.45)';
                 }}
               >
                 {link.label}
@@ -126,7 +124,7 @@ export default function Navbar() {
                   <span
                     className="absolute"
                     style={{
-                      bottom: '-8.16px',
+                      bottom: '0px',
                       left: 0,
                       width: '24px',
                       height: '3px',
@@ -140,28 +138,25 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* CTA Button — right side, Figma: 322.73px × 48.19px, border-radius 24px */}
+        {/* CTA Button */}
         <a
           href="#contact"
           id="nav-enquire-btn"
           onClick={(e) => { e.preventDefault(); handleNavClick('Contact Us', '#contact'); }}
-          className="absolute flex items-center justify-between transition-all duration-200 hover:opacity-90 active:scale-[0.98]"
+          className="flex-shrink-0 flex items-center justify-between transition-all duration-200 hover:opacity-90 active:scale-[0.98]"
           style={{
-            right: '100px',
-            top: '50%',
-            transform: 'translateY(-50%)',
             background: '#FF6801',
             borderRadius: '24.09px',
-            width: '323px',
             height: '48px',
-            paddingLeft: '22px',
-            paddingRight: '14px',
+            paddingLeft: 'clamp(16px, 1.3vw, 22px)',
+            paddingRight: 'clamp(12px, 1vw, 14px)',
+            gap: '12px',
           }}
         >
           <span
             style={{
               fontWeight: 700,
-              fontSize: '18px',
+              fontSize: 'clamp(14px, 1.1vw, 18px)',
               lineHeight: '20px',
               color: '#FFFFFF',
               whiteSpace: 'nowrap',
@@ -169,9 +164,8 @@ export default function Navbar() {
           >
             Enquire About Advertising
           </span>
-          {/* Arrow icon — matches Figma Vector 5 & 6: horizontal line + diagonal stroke */}
-          <span className="flex-shrink-0 ml-3 flex items-center" style={{ width: '15px', height: '10px', position: 'relative' }}>
-            {/* Horizontal line */}
+          {/* Arrow icon */}
+          <span className="flex-shrink-0 flex items-center" style={{ width: '15px', height: '10px', position: 'relative' }}>
             <span
               style={{
                 position: 'absolute',
@@ -183,18 +177,16 @@ export default function Navbar() {
                 transform: 'translateY(-50%)',
               }}
             />
-            {/* Arrowhead */}
             <span
               style={{
                 position: 'absolute',
                 right: 0,
                 top: '50%',
-                transform: 'translateY(-50%)',
+                transform: 'translateY(-50%) rotate(45deg)',
                 width: '6px',
                 height: '10px',
                 borderRight: '2.5px solid #FFFFFF',
                 borderTop: '2.5px solid #FFFFFF',
-                transform: 'translateY(-50%) rotate(45deg)',
               }}
             />
           </span>

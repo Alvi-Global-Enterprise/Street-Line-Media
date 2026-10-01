@@ -18,9 +18,9 @@ export default function Footer() {
   };
 
   return (
-    <footer id="footer" className="bg-black pt-16 lg:pt-20 pb-10">
-      {/* Figma Group 228: width 2018px, height 654px, background #000000 */}
-      <div className="max-w-[1920px] mx-auto px-6 lg:px-[100px]">
+    <footer id="footer" className="bg-black pt-14 lg:pt-20 pb-10">
+      {/* Figma Group 228 */}
+      <div className="max-w-[1920px] mx-auto px-6 lg:px-12 xl:px-[100px]">
 
         {/* 4 Columns Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-16 lg:mb-20">
@@ -140,7 +140,7 @@ export default function Footer() {
           </div>
 
           {/* Col 3: Our Services */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2 xl:col-span-3">
             <h3
               style={{
                 fontFamily: "'LINE Seed JP', sans-serif",
@@ -180,7 +180,7 @@ export default function Footer() {
           </div>
 
           {/* Col 4: Newsletter (Figma Group 110: 412.23px) */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-4 xl:col-span-3">
             <h3
               style={{
                 fontFamily: "'LINE Seed JP', sans-serif",
@@ -210,7 +210,7 @@ export default function Footer() {
             <form
               id="newsletter-form"
               onSubmit={handleSubscribe}
-              className="flex items-center bg-white rounded-[10px] p-[5px] w-full max-w-[412px]"
+              className="flex items-center bg-white rounded-[10px] p-[5px] w-full max-w-[412px] overflow-hidden"
               style={{ height: '62px' }}
             >
               <input
@@ -222,18 +222,15 @@ export default function Footer() {
                 required
                 style={{
                   fontFamily: "'LINE Seed JP', sans-serif",
-                  fontSize: '18px',
                 }}
-                className="flex-1 px-4 py-2 text-black font-normal placeholder:text-black/25 outline-none bg-transparent"
+                className="min-w-0 flex-1 px-3 sm:px-4 py-2 text-black font-normal text-[15px] sm:text-[17px] xl:text-[18px] placeholder:text-black/30 outline-none bg-transparent"
               />
               {/* Subscribe button — Figma Rectangle 38: 142.56px x 52.08px, bg #FF6801, radius 6px */}
               <button
                 id="newsletter-subscribe-btn"
                 type="submit"
-                className="flex items-center justify-center bg-[#FF6801] text-white font-medium text-[16px] sm:text-[18px] rounded-[6px] transition-all duration-200 hover:bg-[#e05b00] flex-shrink-0"
+                className="flex items-center justify-center bg-[#FF6801] text-white font-medium text-[14px] sm:text-[16px] xl:text-[18px] rounded-[6px] transition-all duration-200 hover:bg-[#e05b00] flex-shrink-0 px-4 sm:px-6 h-[52px]"
                 style={{
-                  width: '135px',
-                  height: '52px',
                   fontFamily: "'LINE Seed JP', sans-serif",
                 }}
               >
