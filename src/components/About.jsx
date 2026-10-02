@@ -25,7 +25,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="bg-white py-14 lg:py-20 xl:py-24">
+    <section id="about" className="bg-white pt-4 sm:pt-6 lg:pt-8 xl:pt-10 pb-14 lg:pb-20 xl:pb-24 scroll-mt-24">
       {/* Figma Group 225: 1734px x 719.06px */}
       <div className="max-w-[1920px] mx-auto px-6 lg:px-12 xl:px-[87px]">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12 xl:gap-[64px] 2xl:gap-[93px]">

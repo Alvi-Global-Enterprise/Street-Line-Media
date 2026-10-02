@@ -97,7 +97,7 @@ function ServiceCard({ service }) {
 
 export default function Services() {
   return (
-    <section id="services" className="bg-white py-14 lg:py-20 xl:py-24">
+    <section id="services" className="bg-white pt-14 lg:pt-20 xl:pt-24 pb-4 lg:pb-6 xl:pb-8">
       <div className="max-w-[1920px] mx-auto px-6 lg:px-12 xl:px-[100px]">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-10 lg:mb-12">
