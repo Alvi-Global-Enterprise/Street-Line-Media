@@ -102,9 +102,9 @@ export default function BillboardLocations() {
                       <h3 className="font-bold text-white text-[18px] sm:text-[20px] leading-[141%] tracking-[0.01em]">
                         {bb.title}
                       </h3>
-                      <p className="text-white/70 text-[13px] uppercase tracking-[0.01em] mt-1 flex items-center gap-1.5">
+                      {/* <p className="text-white/70 text-[13px] uppercase tracking-[0.01em] mt-1 flex items-center gap-1.5">
                         <img src="/assets/loc.png" className='w-3.5 h-3.5 object-contain' alt="" /> {bb.location}
-                      </p>
+                      </p> */}
                     </div>
                     {/* Arrow circle button */}
                     <button
