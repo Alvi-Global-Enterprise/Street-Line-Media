@@ -156,17 +156,19 @@ export default function BillboardLocations() {
                     </div>
 
                     {/* Spec 3: Illumination */}
-                    <div className="bg-white/[0.05] hover:bg-white/[0.09] border border-white/10 rounded-xl p-3.5 sm:p-4 transition-colors">
-                      <div className="flex items-center gap-2 mb-1">
-                        <Sparkles size={18} className="text-brand-orange" />
-                        <span className="text-white/60 text-xs font-semibold uppercase tracking-wider">
-                          Visibility
-                        </span>
+                    <div className="col-span-1 sm:col-span-2 bg-white/[0.05] hover:bg-white/[0.09] border border-white/10 rounded-xl p-3.5 sm:p-4 transition-colors flex items-center justify-between">
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <Sparkles size={18} className="text-brand-orange" />
+                          <span className="text-white/60 text-xs font-semibold uppercase tracking-wider">
+                            Visibility
+                          </span>
+                        </div>
+                        <p className="font-bold text-[17px] sm:text-[19px] text-white tracking-[0.01em]">
+                          24/7 Illuminated
+                        </p>
                       </div>
-                      <p className="font-bold text-[17px] sm:text-[19px] text-white tracking-[0.01em]">
-                        24/7 Illuminated
-                      </p>
-                      <p className="text-brand-orange-light text-xs font-medium mt-0.5">
+                      <p className="text-brand-orange-light text-xs sm:text-sm font-medium">
                         Day & Night Impact
                       </p>
                     </div>
