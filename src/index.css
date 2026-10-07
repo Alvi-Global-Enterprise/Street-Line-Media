@@ -90,7 +90,6 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #e05a00;
 }
-
 /* Billboard glowing light animations for CTABanner - Pure circular blurry glow */
 @keyframes bulbGlowPulse {
   0%, 100% {
